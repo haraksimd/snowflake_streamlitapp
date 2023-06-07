@@ -13,5 +13,5 @@ streamlit.text("🐔 Egg")
 streamlit.text("🥑🍞 Avocado toast")
 
 streamlit.header("Special Menu")
-streamlit.multiselect("Pick some fruits:", list(fruit_list_df.index),['Avocado','Strawberries'])
-streamlit.dataframe(fruit_list_df)
+fruit_selected = streamlit.multiselect("Pick some fruits:", list(fruit_list_df.index),['Avocado','Strawberries'])
+streamlit.dataframe(fruit_list_df.loc[fruit_selected])
