@@ -12,5 +12,5 @@ streamlit.text("🐔 Egg")
 streamlit.text("🥑🍞 Avocado toast")
 
 streamlit.header("Special Menu")
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+streamlit.multiselect("Pick some fruits:", list(fruid_list_df.index))
 streamlit.dataframe(fruit_list_df)
