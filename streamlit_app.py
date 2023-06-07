@@ -1,8 +1,12 @@
 import streamlit
 import pandas
+import requests
 
 fruit_list_df = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 fruit_list_df = fruit_list_df.set_index('Fruit')
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+
 
 
 streamlit.title("Snowflake project")
@@ -15,3 +19,4 @@ streamlit.text("🥑🍞 Avocado toast")
 streamlit.header("Special Menu")
 fruit_selected = streamlit.multiselect("Pick some fruits:", list(fruit_list_df.index),['Avocado','Strawberries'])
 streamlit.dataframe(fruit_list_df.loc[fruit_selected])
+streamlit.text(fruityvice_response)
